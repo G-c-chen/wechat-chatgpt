@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pay/pay",
+    "pages/webview/webview"
+  ],
+  "window": {
+    "navigationBarTitleText": "ChatGPT聊天",
+    "navigationBarBackgroundColor": "#d9d9d9",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

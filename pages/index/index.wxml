@@ -1,0 +1,40 @@
+<view class="page">
+    <scroll-view class="box-msg-list" scroll-x="{{false}}" scroll-y="{{true}}" scroll-with-animation="{{true}}" scroll-top="{{scrollTop}}">
+        <view class="list">
+            <block wx:for="{{lists}}">
+                <view class="message" data-index="{{index}}" bindlongpress="copyText" wx:if="{{item.user == 'ChatGPT'}}" style="background: #f7f7f8;">
+                    <view class="avatar"><image mode="widthFix" src="/images/ic_chatgpt_logo.png"></image></view>
+                    <view class="text">
+                        <view wx:for="{{item.message}}" wx:for-item="text">
+                            <text decode="{{true}}">{{text}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="message" data-index="{{index}}" bindlongpress="copyText" wx:else style="background: #fff;">
+                    <view class="avatar" style="background: #9aa37e;"><text>{{item.user}}</text></view>
+                    <view class="text">
+                        <view wx:for="{{item.message}}" wx:for-item="text">
+                            <text decode="{{true}}">{{text}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        
+    </scroll-view>
+
+    <view class="box-input">
+        <view class="input">
+            <textarea type="text" model:value="{{message}}" confirm-type="send" bindconfirm="sendConfirm" fixed='true' contenteditable="true" contenteditable="true" auto-height="true" placeholder="输入你的问题"></textarea>
+            <button class="btn-send" bindtap="sendText"><image mode="widthFix" src="/images/ic_send.png"></image></button>
+        </view>
+        <view class="account" bindtap="toPay" wx:if="{{!vip_expire_time}}">
+            <text class="balance">余额：<text>{{balance}}</text>条</text>
+            <view class="btn-pay">充值</view>
+        </view>
+        <view class="account" bindtap="toPay" wx:else>
+            <text class="balance">VIP到期时间：{{vip_expire_time}}</text>
+            <view class="btn-pay">续费</view>
+        </view>
+    </view>
+</view>

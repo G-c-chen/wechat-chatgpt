@@ -1,0 +1,170 @@
+page {
+    background: #f3f6f9;
+}
+.box-input {
+    width: 100%;
+    padding: 40rpx 0 0 0;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #d8d8e2;
+    background: #fafcfe;
+}
+.box-input .input {
+    width: 690rpx;
+    margin: 0 30rpx;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 0 12rpx rgba(0, 0, 0, 0.15);
+}
+.box-input .input textarea {
+    width: 580rpx;
+    padding: 20rpx 10rpx 20rpx 20rpx;
+    border-radius: 10rpx;
+    line-height: 40rpx;
+}
+.box-input .input .btn-send {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100rpx;
+    height: 80rpx;
+    padding: 0;
+    border: none;
+    border-radius: 10rpx;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+.box-input .input .btn-send::after {
+    display: none;
+}
+.box-input .input .btn-send:active {
+    background: #f2f2f2;
+}
+.box-input .input .btn-send image {
+    width: 40rpx;
+}
+
+.empty {
+    text-align: center;
+    margin: 0 60rpx;
+    padding: 80rpx 0 100rpx 0;
+    margin-top: 200rpx;
+    background: #fff;
+    border-radius: 20rpx;
+}
+.empty image {
+    width: 404rpx;
+    height: 266rpx;
+    margin-bottom: 40rpx;
+}
+.empty .tip {
+    width: 100%;
+    line-height: 40rpx;
+    font-size: 32rpx;
+    letter-spacing: 2rpx;
+    color: #444;
+}
+
+.btn-finish {
+    width: 60%;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 48rpx;
+    border: none;
+    color: #fff;
+    margin: 240rpx auto 0 20%;
+    box-shadow: 0 0 20rpx rgba(0, 235, 79, 0.1);
+    font-size: 30rpx;
+    letter-spacing: 4rpx;
+    outline: none;
+    background: #39b54a;
+    text-align: center;
+}
+
+.page {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+}
+
+.box-msg-list {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 132rpx;
+    left: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.list {
+    width: 100%;
+    height: auto;
+}
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40rpx 40rpx;
+    border-bottom: 2rpx solid #ddd;
+}
+.message:last-child {
+    border-bottom: 0;
+}
+.message .text {
+    width: 100%;
+    color: #343541;
+    line-height: 60rpx;
+    font-size: 32rpx;
+    word-break: break-all;
+}
+.message .avatar {
+    width: 48rpx;
+    height: 48rpx;
+    background: #10a37f;
+    margin-right: 30rpx;
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 4rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rpx;
+}
+.message .avatar image {
+    width: 36rpx;
+}
+.account {
+    margin: 20rpx 30rpx;
+    padding: 16rpx 24rpx 16rpx 24rpx;
+    box-sizing: border-box;
+    /* background: #f3f6f9; */
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.account .balance {
+    color: #666;
+    font-size: 24rpx;
+}
+.account .balance text {
+    color: #10a37f;
+    margin-right: 6rpx;
+}
+.account .btn-pay {
+    display: inline-block;
+    width: 60rpx;
+    color: #10a37f;
+    margin-left: 20rpx;
+    font-size: 24rpx;
+}

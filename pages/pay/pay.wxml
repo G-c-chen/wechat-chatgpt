@@ -1,0 +1,101 @@
+<view class="wrap">
+    <view class="wallet" wx:if="{{vip_expire_time}}">
+        <view class="vip" wx:if="{{vip_expire_time}}" style="font-size: 32rpx; font-weight: bold;">VIP会员到期时间：{{vip_expire_time}}</view>
+        <view class="balance" style="font-size: 24rpx; margin-top: 12rpx;">账户余额<text style="font-size: 24rpx;">{{balance}}</text>条<text style="font-size: 24rpx; color: #fff;font-weight: normal;">（vip生效期间不消耗）</text></view>
+    </view>
+    <view class="wallet" wx:else>
+        <view class="balance">账户余额<text>{{balance}}</text>条</view>
+        <view class="vip" wx:if="{{vip_expire_time}}">VIP到期时间：{{vip_expire_time}}</view>
+    </view>
+    <view class="box" wx:if="{{tasks}}">
+        <view class="box-title">
+            <text>每日任务</text>
+            <text class="desc">免费获得条数</text>
+        </view>
+        <view class="task-list">
+            <view class="task-item" wx:if="{{tasks.share}}">
+                <view class="task-icon"><image src="/images/ic_task_share.png"></image></view>
+                <view class="task-info">
+                    <view class="task-name">分享给朋友</view>
+                    <view class="task-desc">分享1次奖励<text>{{tasks.share.num}}</text>条，每日限<text>{{tasks.share.max}}</text>次</view>
+                    <view class="task-status">进度 {{tasks.share.count}} / {{tasks.share.max}}</view>
+                </view>
+                <view class="task-op">
+                    <button type="button" class="task-btn" bindtap="toIndex">去转发</button>
+                </view>
+            </view>
+            
+            <view class="task-item" wx:if="{{tasks.invite}}">
+                <view class="task-icon"><image src="/images/ic_task_invite.png"></image></view>
+                <view class="task-info">
+                    <view class="task-name">邀请新用户</view>
+                    <view class="task-desc">每邀请1人奖励<text>{{tasks.invite.num}}</text>条，每日限<text>{{tasks.invite.max}}</text>人</view>
+                    <view class="task-status">进度 {{tasks.invite.count}} / {{tasks.invite.max}}</view>
+                </view>
+                <view class="task-op">
+                    <button type="button" class="task-btn" bindtap="toIndex">去邀请</button>
+                </view>
+            </view>
+            
+            <view class="task-item"
+             wx:if="{{tasks.ad}}">
+                <view class="task-icon"><image src="/images/ic_task_ad.png"></image></view>
+                <view class="task-info">
+                    <view class="task-name">看广告得次数</view>
+                    <view class="task-desc">完整观看广告奖励<text>{{tasks.ad.num}}</text>条，每日观看上限<text>{{tasks.ad.max}}</text>次</view>
+                    <view class="task-status">进度 {{tasks.ad.count}} / {{tasks.ad.max}}</view>
+                </view>
+                <view class="task-op">
+                    <button type="button" class="task-btn" bindtap="showTaskAd">去完成</button>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+ 
+    <block wx:if="{{is_check == 1 && system == 'ios'}}">
+        <view class="box" style="padding-top: 60rpx;">
+            <button class="btn-pay" open-type="contact"><image mode="widthFix" src="/images/ic_kefu.png" style="width: 48rpx; height: 48rpx; margin-right: 10rpx;"></image>请联系客服</button>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="box" style="padding-right:0;" wx:if="{{goodsList && goodsList.length > 0}}">
+            <view class="box-title">
+                <text>充值次数</text>
+                <text class="desc">次数永不过期</text>
+            </view>
+            <view class="goods-list">
+                <view class="goods {{item.id == goods_id ? 'active' : ''}}" wx:for="{{goodsList}}" bindtap="chooseGoods" data-id="{{item.id}}">
+                    <view class="title">
+                        <text class="num">{{item.num}}</text>
+                        <text class="unit">条</text>
+                    </view>
+                    <view class="price">特价<text>{{item.price / 100}}</text>元</view>
+                    <view class="market_price" wx:if="{{item.market_price > 0}}">原价{{item.market_price / 100}}元</view>
+                </view>
+                <view style="clear: both;"></view>
+            </view>
+            <button class="btn-pay" bindtap="doPayGoods" wx:if="{{is_check == 0 || system != 'ios'}}" disabled="{{!goods_id || paying}}">立即充值</button>
+        </view>
+
+        <view class="box" style="padding-right:0;" wx:if="{{vipList && vipList.length > 0}}">
+            <view class="box-title">
+                <text>开通VIP会员</text>
+                <text class="desc">会员不消耗次数，无限使用</text>
+            </view>
+            <view class="goods-list">
+                <view class="goods {{item.id == vip_id ? 'active' : ''}}" wx:for="{{vipList}}" bindtap="chooseVip" data-id="{{item.id}}">
+                    <view class="title">
+                        <text class="num">{{item.num}}</text>
+                        <text class="unit">个月</text>
+                    </view>
+                    <view class="price">特价<text>{{item.price / 100}}</text>元</view>
+                    <view class="market_price" wx:if="{{item.market_price > 0}}">原价{{item.market_price / 100}}元</view>
+                </view>
+                <view style="clear: both;"></view>
+            </view>
+            <button class="btn-pay" bindtap="doPayVip" wx:if="{{is_check == 0 || system != 'ios'}}" disabled="{{!vip_id || paying}}">立即开通会员</button>
+        </view>
+    </block>
+    
+</view>

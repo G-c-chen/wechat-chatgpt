@@ -1,0 +1,204 @@
+page {
+    margin: 0;
+    padding: 0;
+    background-color: #ededed;
+    font-family: '微软雅黑';
+    padding-bottom: 30rpx;
+}
+.mod-title {
+    padding: 30rpx 30rpx;
+    font-size: 32rpx;
+}
+.mod-title text {
+    padding-left: 16rpx;
+    border-left: 8rpx solid #10a37f;
+    line-height: 24rpx;
+    height: 30rpx;
+}
+.wallet {
+    height: 140rpx;
+    background: #10a37f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding-bottom: 100rpx;
+    margin-bottom: -80rpx;
+}
+.wallet .balance {
+    font-size: 36rpx;
+    text-align: center;
+}
+.wallet .balance text {
+    font-size: 48rpx;
+    margin: 0 10rpx;
+    color: red;
+    font-weight: bold;
+}
+.wallet .vip {
+    color: #eee;
+}
+.goods-list {
+   padding: 0 0 20rpx 0;
+}
+.goods {
+    background: #f3f6f9;
+    width: 196rpx;
+    height: 206rpx;
+    border-radius: 20rpx;
+    text-align: center;
+    padding: 20rpx 0;
+    float: left;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+    border: 6rpx solid #f3f6f9;
+    margin-top: 30rpx;
+}
+.goods .title {
+    font-size: 48rpx;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    font-weight: bold;
+}
+.goods .title .unit {
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    font-weight: normal;
+}
+.goods .price {
+    font-size: 28rpx;
+    margin: 10rpx 0;
+    color: #444;
+}
+.goods .price text {
+    color: red;
+    margin: 0 6rpx;
+}
+.goods .market_price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 24rpx;
+}
+.goods.active {
+    border-color: #10a37f;
+}
+.btn-pay {
+    width: 400rpx;
+    height: 80rpx;
+    padding: 10rpx;
+    background-color: #10a37f;
+    border-radius: 100rpx;
+    color: #fff;
+    font-size: 30rpx;
+    border: none;
+    outline: none;
+    margin: 30rpx 0 30rpx 110rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2rpx;
+}
+.btn-pay::after {
+    display: none;
+}
+.btn-pay:active {
+    transform: scale(0.9);
+}
+
+.box {
+    width: 690rpx;
+    background: #fff;
+    margin: 0 30rpx 30rpx 30rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    padding:20rpx 30rpx;
+    box-sizing: border-box;
+}
+.box .box-title {
+    width: 100%;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+}
+.box .box-title .desc {
+    font-weight: normal;
+    color: #999;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+
+.task-list {
+    padding-top: 20rpx;
+}
+.task-list .task-item {
+    width: 100%;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2rpx solid #f3f6f9;
+    padding-bottom: 30rpx;
+}
+.task-list .task-item:last-child {
+    border-bottom: 0;
+}
+.task-item .task-icon {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    background-color: #f3f6f9;
+}
+.task-item .task-icon image {
+    width: 100%;
+    height: 100%;
+}
+.task-item .task-info {
+    margin: 0 20rpx;
+    width: 380rpx;
+}
+.task-item .task-name{
+    font-size: 32rpx;
+    color: #333;
+    line-height: 48rpx;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+}
+.task-item .task-desc {
+    font-size: 28rpx;
+    color: #999;
+    line-height: 44rpx;
+    margin: 6rpx 0 20rpx 0;
+}
+.task-item .task-desc text {
+    color: red;
+    margin: 0 6rpx;
+}
+.task-item .task-status {
+    font-size: 24rpx;
+    color: #10a37f;
+}
+.task-item .task-op {
+    width: 110rpx;
+}
+.task-item .task-btn {
+    border: none;
+    font-size: 22rpx;
+    padding: 0;
+    background: #10a37f;
+    color: #fff;
+    border-radius: 40rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+.task-item .task-btn::after {
+    display: none;
+}
+.task-item .task-btn:active {
+    transform: scale(0.9);
+}
